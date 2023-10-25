@@ -1,0 +1,327 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+  <!--PRUEBA IMPLEMENTACION DE MESSENGER -->
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pruebas</title>
+  <link rel="stylesheet" href="stylePage.css">
+  <link rel="stylesheet" href="responsive.css">
+  <!--<link rel="stylesheet" href="style.css" /> -->
+    
+ <script src="https://apps.mypurecloud.com/webchat/jsapi-v1.js"></script> 
+<script type="text/javascript" charset="utf-8">
+  (function (g, e, n, es, ys) {
+    g['_genesysJs'] = e;
+    g[e] = g[e] || function () {
+      (g[e].q = g[e].q || []).push(arguments)
+    };
+    g[e].t = 1 * new Date();
+    g[e].c = es;
+    ys = document.createElement('script'); ys.async = 1; ys.src = n; ys.charset = 'utf-8'; document.head.appendChild(ys);	
+  })(window, 'Genesys', 'https://apps.mypurecloud.ie/genesys-bootstrap/genesys.min.js', {
+    environment: 'euw1',
+    deploymentId: '725a14d6-0766-4229-bf18-629e16cc8e86'
+  });
+  Genesys(
+        'subscribe',
+        'Messenger.ready',
+        (e) => (customLauncher.style.display = 'block')
+      );
+	  Genesys("command", "Database.set", {
+  messaging: {
+    customAttributes: {
+      department: "sales",
+      property_type: "apartment",
+      device: "mobile"
+    }
+  }
+});
+</script>
+<button type="button" id="custom-launcher" onclick="toggleMessenger()">
+  Messenger
+</button>
+</head>
+
+<body id="body">
+
+    <!-- Bienvenida  -->
+    <!--Cabecera-->
+    <header id="header">
+        <div class="wrap">
+            <div id="logo">
+                <!--<span class="gear">S</span>-->
+                <h3>BLOG</h3>
+            </div>
+            <nav id="menu">
+                <ul>
+                    <li>
+                        <a href="#">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#">BLOG</a>
+                    </li>
+                    <li>
+                        <a href="#">FORMACIÓN</a>
+                    </li>
+                    <li>
+                        <a href="#">CONTACTO</a>
+                    </li>
+                </ul>
+            </nav>
+        </div>
+    </header>
+    <!-- Fin del Encabezado-->
+
+
+    <section class="wrap">
+        <section id="info">
+
+            <!-- Inicio del Banner -->
+            <div id="banner">
+               
+            </div>
+            <!-- Fin del Banner-->
+
+            <!-- Incio de las Tarjetas-->
+            <div id="cards">
+                <div class="card">
+                    <span class="icon">H</span>
+                    <h2 class="category">Desarrollo Web</h2>
+                    <p class="description">Aprende los principales lenguajes para desarrollar webs !Conviertete en un
+                        webmaster!</p>
+                </div>
+                <div class="card">
+                    <span class="icon">_</span>
+                    <h2 class="category">Sistemas Operativos</h2>
+                    <p class="description">Aprende a administrar sistemas Linux y Windows</p>
+                </div>
+                <div class="card">
+                    <span class="icon">S<Samp></Samp></span>
+                    <h2 class="category">Hardware</h2>
+                    <p class="description">Conoce los entresijos del hardware</p>
+                </div>
+                <div class="card">
+                    <span class="icon">u</span>
+                    <h2 class="category">Redes e Internet</h2>
+                    <p class="description">Aprende a configurar y administrar redes informaticas y servidores.</p>
+                </div>
+                <div class="card">
+                    <span class="icon">a</span>
+                    <h2 class="category">Bases de Datos</h2>
+                    <p class="description">Aprende a montar y administrar bases de datos</p>
+                </div>
+            </div>
+            <!-- Fin de las Tarjetas-->
+        </section>
+
+        <div class="clearfix"></div>
+        <!-- Inicio de la Barra Lateral -->
+        <aside id="lateral">
+            <h3>BUSCAR</h3>
+            <div id="search">
+                <form>
+                    <input type="text">
+                    <input type="button" class="icon" value="L">
+                </form>
+            </div>
+
+            <h3>LOGIN</h3>
+            <div id="login" class="aside-box">
+                <form>
+                    <label id="user" class="icon">U</label>
+                    <input type="email">
+                    <label id="password" class="icon">w</label>
+                    <input type="password">
+                    <input type="submit" value="Entrar">
+                    <input type="reset" value="Limpiar">
+                </form>
+                <a href="#">Registrate Aqui.</a>
+                <a href="#">¿Has Olvidado tu Contraseña?</a>
+            </div>
+
+            <h3>REDES SOCIALES</h3>
+            <div id="social" class="aside-box">
+                <div id="twitter">
+                    <a href="#" class="icon">t</a>
+                    <p class="overlay">Twiiter</p>
+                </div>
+                <div id="facebook">
+                    <a href="#" class="icon">f</a>
+                    <p class="overlay">Facebook</p>
+                </div>
+                <div id="youtube">
+                    <a href="#" class="icon">y</a>
+                    <p class="overlay">YouTube</p>
+                </div>
+            </div>
+
+            <h3>PATROCINADORES</h3>
+            <div id="sponsors" class="aside-box">
+
+            </div>
+        </aside>
+        <!-- Fin de la Barra Lateral-->
+
+        <!-- Inicio de los Articulos-->
+        <section id="articles">
+            <h2>Ultimos Articulos</h2>
+            <div class="clearfix"></div>
+            <article>
+                <div class="data">
+                    <span>Fecha: 15 marzo</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del Articulo</a>
+                </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea culpa saepe error rerum doloremque alias
+                    ullam, quod impedit quam quibusdam suscipit blanditiis voluptatem qui, fugit cupiditate nihil.
+                    Adipisci explicabo facilis voluptatem aut laboriosam modi ut sapiente, cupiditate a! Veniam
+                    exercitationem magnam pariatur placeat, ducimus et nostrum repudiandae. Incidunt, voluptatibus illo!
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 15 marzo</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del Articulo</a>
+                </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea culpa saepe error rerum doloremque alias
+                    ullam, quod impedit quam quibusdam suscipit blanditiis voluptatem qui, fugit cupiditate nihil.
+                    Adipisci explicabo facilis voluptatem aut laboriosam modi ut sapiente, cupiditate a! Veniam
+                    exercitationem magnam pariatur placeat, ducimus et nostrum repudiandae. Incidunt, voluptatibus illo!
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 15 marzo</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del Articulo</a>
+                </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea culpa saepe error rerum doloremque alias
+                    ullam, quod impedit quam quibusdam suscipit blanditiis voluptatem qui, fugit cupiditate nihil.
+                    Adipisci explicabo facilis voluptatem aut laboriosam modi ut sapiente, cupiditate a! Veniam
+                    exercitationem magnam pariatur placeat, ducimus et nostrum repudiandae. Incidunt, voluptatibus illo!
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 15 marzo</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del Articulo</a>
+                </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea culpa saepe error rerum doloremque alias
+                    ullam, quod impedit quam quibusdam suscipit blanditiis voluptatem qui, fugit cupiditate nihil.
+                    Adipisci explicabo facilis voluptatem aut laboriosam modi ut sapiente, cupiditate a! Veniam
+                    exercitationem magnam pariatur placeat, ducimus et nostrum repudiandae. Incidunt, voluptatibus illo!
+                </p>
+            </article>
+            <article>
+                <div class="data">
+                    <span>Fecha: 15 marzo</span>
+                    <span>Categoria: Pruebas</span>
+                </div>
+                <h4>
+                    <a href="#">Titulo del Articulo</a>
+                </h4>
+                <p>
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Ea culpa saepe error rerum doloremque alias
+                    ullam, quod impedit quam quibusdam suscipit blanditiis voluptatem qui, fugit cupiditate nihil.
+                    Adipisci explicabo facilis voluptatem aut laboriosam modi ut sapiente, cupiditate a! Veniam
+                    exercitationem magnam pariatur placeat, ducimus et nostrum repudiandae. Incidunt, voluptatibus illo!
+                </p>
+            </article>
+            <article id="blog">
+                <a href="#">Ir al Blog.</a>
+            </article>
+        </section>
+        <!-- Fin de los Articulos-->
+    </section>
+   <!--inicio de codigo para el  Embeddable Framework-->  
+<iframe allow="camera *; microphone *; autoplay *" src="https://apps.mypurecloud.com/crm/embeddableFramework.html"></iframe>
+
+  
+   <!--fin de codigo para el  Embeddable Framework-->     
+    <div class="clearfix"></div>
+    <!-- Inicio del Pie de Pagina-->
+    <footer id="footer">
+        <div class="wrap">
+
+            <div id="menu_footer">
+                <h5>MENÚ</h5>
+                <ul>
+                    <li>
+                        <a href="#">INICIO</a>
+                    </li>
+                    <li>
+                        <a href="#">BLOG</a>
+                    </li>
+                    <li>
+                        <a href="#">FORMACIÓN</a>
+                    </li>
+                    <li>
+                        <a href="#">CONTACTO</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div id="location">
+                <h5>¿Donde Estamos?</h5>
+                <iframe
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d482237.61289947166!2d-99.1250658374448!3d19.217842613261542!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x85d1fe7b38d6a54b%3A0xac7895c16279550a!2sIndra%20Sistemas%20M%C3%A9xico%2C%20S.A.%20De%20C.V.!5e0!3m2!1ses-419!2smx!4v1647374183918!5m2!1ses-419!2smx"
+                    width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false"
+                    tabindex="0"></iframe>
+            </div>
+
+            <div id="info">
+                <h5>Desarrollado Con.</h5>
+                <p>
+                    <img id="imgHTML" src="img/html5-badge-h-css3-graphics-multimedia-performance-semantics.png"
+                        alt="HTML">
+                </p>
+
+                <h5>Optimizado Para.</h5>
+                <p id="browsers">
+                    <a href="#">
+                        <img src="img/firefox-icon.png">
+                    </a>
+                    <a href="#">
+                        <img src="img/chrome.png">
+                    </a>
+                    <a href="#">
+                        <img src="img/ios.png">
+                    </a>
+                    <a href="#">
+                        <img src="img/android.png">
+                    </a>
+                    <a href="#">
+                        <img src="img/Opera_256x256.png">
+                    </a>
+                    <a href="#">
+                        <img src="img/safari.png">
+                    </a>
+                </p>
+
+                <h5>Autor</h5>
+                <p id="fautor">&copy; Raul Zepeda</p>
+            </div>
+            
+        </div> 
+      
+    </footer>
+    <!-- Fin del Pie de Pagina-->
+  </body>
+</html>
